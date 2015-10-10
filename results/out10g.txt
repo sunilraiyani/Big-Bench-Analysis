@@ -1,0 +1,53 @@
+/home/hduser/nfs/Big-Bench/logs/q01.log:======= q01  time =========
+/home/hduser/nfs/Big-Bench/logs/q01.log-
+/home/hduser/nfs/Big-Bench/logs/q01.log-real	26m8.984s
+/home/hduser/nfs/Big-Bench/logs/q01.log-user	0m52.675s
+/home/hduser/nfs/Big-Bench/logs/q01.log-sys	0m2.316s
+--
+/home/hduser/nfs/Big-Bench/logs/q02.log:======= q02  time =========
+/home/hduser/nfs/Big-Bench/logs/q02.log-
+/home/hduser/nfs/Big-Bench/logs/q02.log-real	31m37.898s
+/home/hduser/nfs/Big-Bench/logs/q02.log-user	1m20.853s
+/home/hduser/nfs/Big-Bench/logs/q02.log-sys	0m5.084s
+--
+/home/hduser/nfs/Big-Bench/logs/q03.log:======= q03  time =========
+/home/hduser/nfs/Big-Bench/logs/q03.log-
+/home/hduser/nfs/Big-Bench/logs/q03.log-real	9m32.070s
+/home/hduser/nfs/Big-Bench/logs/q03.log-user	1m31.050s
+/home/hduser/nfs/Big-Bench/logs/q03.log-sys	0m6.784s
+--
+/home/hduser/nfs/Big-Bench/logs/q04.log:======= q04  time =========
+/home/hduser/nfs/Big-Bench/logs/q04.log-
+/home/hduser/nfs/Big-Bench/logs/q04.log-real	8m48.353s
+/home/hduser/nfs/Big-Bench/logs/q04.log-user	0m37.330s
+/home/hduser/nfs/Big-Bench/logs/q04.log-sys	0m1.356s
+--
+/home/hduser/nfs/Big-Bench/logs/q05.log:======= q05  time =========
+/home/hduser/nfs/Big-Bench/logs/q05.log-
+/home/hduser/nfs/Big-Bench/logs/q05.log-real    22m52.469s
+/home/hduser/nfs/Big-Bench/logs/q05.log-user    1m4.024s
+/home/hduser/nfs/Big-Bench/logs/q05.log-sys     0m3.048s
+--
+/home/hduser/nfs/Big-Bench/logs/q06.log:======= q06  time =========
+/home/hduser/nfs/Big-Bench/logs/q06.log-
+/home/hduser/nfs/Big-Bench/logs/q06.log-real	40m7.250s
+/home/hduser/nfs/Big-Bench/logs/q06.log-user	1m42.718s
+/home/hduser/nfs/Big-Bench/logs/q06.log-sys	0m5.864s
+--
+/home/hduser/nfs/Big-Bench/logs/q07.log:======= q07  time =========
+/home/hduser/nfs/Big-Bench/logs/q07.log-
+/home/hduser/nfs/Big-Bench/logs/q07.log-real	8m56.910s
+/home/hduser/nfs/Big-Bench/logs/q07.log-user	2m12.524s
+/home/hduser/nfs/Big-Bench/logs/q07.log-sys	0m11.629s
+--
+/home/hduser/nfs/Big-Bench/logs/q08.log:======= q08  time =========
+/home/hduser/nfs/Big-Bench/logs/q08.log-
+/home/hduser/nfs/Big-Bench/logs/q08.log-real	10m21.081s
+/home/hduser/nfs/Big-Bench/logs/q08.log-user	1m29.506s
+/home/hduser/nfs/Big-Bench/logs/q08.log-sys	0m6.780s
+--
+/home/hduser/nfs/Big-Bench/logs/q09.log:======= q09  time =========
+/home/hduser/nfs/Big-Bench/logs/q09.log-
+/home/hduser/nfs/Big-Bench/logs/q09.log-real	10m25.668s
+/home/hduser/nfs/Big-Bench/logs/q09.log-user	0m48.111s
+/home/hduser/nfs/Big-Bench/logs/q09.log-sys	0m2.444s

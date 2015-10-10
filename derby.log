@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jun 19 16:45:35 IST 2014:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0146-b3d6-c324-000003965a48 
+on database directory /home/hduser/nfs/Big-Bench/metastore_db with class loader sun.misc.Launcher$AppClassLoader@6411c21b 
+Loaded from file:/usr/local/hive/lib/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_55-b14
+user.dir=/home/hduser/nfs/Big-Bench
+os.name=Linux
+os.arch=amd64
+os.version=3.13.0-29-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

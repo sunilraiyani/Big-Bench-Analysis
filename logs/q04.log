@@ -1,0 +1,85 @@
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.min.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.reduce.tasks.speculative.execution is deprecated. Instead, use mapreduce.reduce.speculative
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.min.split.size.per.node is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize.per.node
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.input.dir.recursive is deprecated. Instead, use mapreduce.input.fileinputformat.input.dir.recursive
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.min.split.size.per.rack is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize.per.rack
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.max.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.maxsize
+14/06/30 19:00:15 INFO Configuration.deprecation: mapred.committer.job.setup.cleanup.needed is deprecated. Instead, use mapreduce.job.committer.setup.cleanup.needed
+
+Logging initialized using configuration in jar:file:/usr/local/hive/lib/hive-common-0.13.0.jar!/hive-log4j.properties
+hive.exec.parallel=false
+hive.exec.parallel.thread.number=8
+hive.exec.compress.intermediate=false
+mapred.map.output.compression.codec=org.apache.hadoop.io.compress.DefaultCodec
+hive.exec.compress.output=false
+mapred.output.compression.codec=org.apache.hadoop.io.compress.DefaultCodec
+hive.default.fileformat=TextFile
+hive.optimize.mapjoin.mapreduce is undefined
+hive.mapjoin.smalltable.filesize=25000000
+hive.optimize.bucketmapjoin=false
+hive.optimize.bucketmapjoin.sortedmerge=false
+hive.auto.convert.join=true
+hive.auto.convert.sortmerge.join=false
+hive.auto.convert.sortmerge.join.noconditionaltask is undefined
+hive.optimize.ppd=true
+hive.optimize.index.filter=false
+OK
+Time taken: 0.553 seconds
+Added /home/hduser/nfs/Big-Bench/queries/Resources/bigbenchqueriesmr.jar to class path
+Added resource: /home/hduser/nfs/Big-Bench/queries/Resources/bigbenchqueriesmr.jar
+new de.bankmark.bigbench.queries.q10.SentimentUDF()
+new de.bankmark.bigbench.queries.q10.SentimentUDF() done
+OK
+Time taken: 0.531 seconds
+hive.exec.compress.output=false
+OK
+Time taken: 0.113 seconds
+new de.bankmark.bigbench.queries.q10.SentimentUDF()
+new de.bankmark.bigbench.queries.q10.SentimentUDF() done
+initialize() de.bankmark.bigbench.queries.q10.SentimentUDF
+initialize() de.bankmark.bigbench.queries.q10.SentimentUDF done
+Total jobs = 3
+Launching Job 1 out of 3
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1404113889176_0016, Tracking URL = http://master:8088/proxy/application_1404113889176_0016/
+Kill Command = /usr/local/hadoop/bin/hadoop job  -kill job_1404113889176_0016
+Hadoop job information for Stage-1: number of mappers: 3; number of reducers: 0
+2014-06-30 19:00:32,379 Stage-1 map = 0%,  reduce = 0%
+2014-06-30 19:01:32,725 Stage-1 map = 0%,  reduce = 0%, Cumulative CPU 153.52 sec
+2014-06-30 19:02:32,901 Stage-1 map = 0%,  reduce = 0%, Cumulative CPU 331.38 sec
+2014-06-30 19:03:33,664 Stage-1 map = 0%,  reduce = 0%, Cumulative CPU 508.55 sec
+2014-06-30 19:03:57,771 Stage-1 map = 33%,  reduce = 0%, Cumulative CPU 582.45 sec
+2014-06-30 19:04:58,639 Stage-1 map = 33%,  reduce = 0%, Cumulative CPU 686.77 sec
+2014-06-30 19:05:59,334 Stage-1 map = 33%,  reduce = 0%, Cumulative CPU 785.38 sec
+2014-06-30 19:07:00,238 Stage-1 map = 33%,  reduce = 0%, Cumulative CPU 884.16 sec
+2014-06-30 19:07:27,107 Stage-1 map = 50%,  reduce = 0%, Cumulative CPU 926.84 sec
+2014-06-30 19:07:33,580 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 937.26 sec
+2014-06-30 19:08:34,600 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 998.1 sec
+2014-06-30 19:09:35,140 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 1053.57 sec
+2014-06-30 19:10:35,737 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 1114.33 sec
+2014-06-30 19:11:36,182 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 1175.13 sec
+2014-06-30 19:12:36,595 Stage-1 map = 83%,  reduce = 0%, Cumulative CPU 1236.13 sec
+2014-06-30 19:13:24,428 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1285.44 sec
+MapReduce Total cumulative CPU time: 21 minutes 25 seconds 440 msec
+Ended Job = job_1404113889176_0016
+Stage-4 is selected by condition resolver.
+Stage-3 is filtered out by condition resolver.
+Stage-5 is filtered out by condition resolver.
+Moving data to: hdfs://master:9000/tmp/hive-hduser/hive_2014-06-30_19-00-21_976_8634912716155101140-1/-ext-10001
+Moving data to: /user/hduser/benchmarks/bigbench/queryResults/q04result
+Table bigbenchorc.q04result stats: [numFiles=0, numRows=0, totalSize=0, rawDataSize=0]
+MapReduce Jobs Launched: 
+Job 0: Map: 3   Cumulative CPU: 1285.44 sec   HDFS Read: 472003318 HDFS Write: 358272658 SUCCESS
+Total MapReduce CPU Time Spent: 21 minutes 25 seconds 440 msec
+OK
+Time taken: 785.084 seconds
+======= q04  result =======
+results in : /user/hduser/benchmarks/bigbench/queryResults/q04result
+to display : hadoop fs -cat /user/hduser/benchmarks/bigbench/queryResults/q04result/*
+=========================
+======= q04  time =========
+
+real	13m13.156s
+user	0m41.179s
+sys	0m1.404s

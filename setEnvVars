@@ -1,0 +1,139 @@
+## determine base directory
+cd "$(dirname ${BASH_SOURCE[0]})"
+export BIG_BENCH_HOME="$PWD"
+cd "$OLDPWD"
+
+
+## ================================================================
+##  ADAPT BELOW VARIABLES TO YOUR CLUSTER
+## ================================================================
+
+## ==========================
+## SSH options
+## ==========================
+BIG_BENCH_SSH_OPTIONS=""					   ## you want to make sure that you can reach all nodes in BIG_BENCH_NODES file via ssh. use this variable to specify the key file to ssh (e.g.: SSH_OPTIONS="-i <keyfile>")
+
+
+## ==========================
+## HADOOP environment
+## ==========================
+export BIG_BENCH_HIVE_LIBS="/usr/local/hive/lib"                      	##especially location of: hive-contrib.jar;
+export BIG_BENCH_HADOOP_LIBS="/usr/local/hadoop/share/hadoop/hdfs"		        ##especially location of: hadoop-hdfs.jar;
+export BIG_BENCH_HADOOP_LIBS_NATIVE="/usr/local/hadoop/lib/native"
+export BIG_BENCH_HADOOP_CONF="/usr/local/hadoop/etc/hadoop"       ##folder containing the cluster setup *-site.xml files like core-site.xml 
+
+## ==========================
+## HDFS config and paths
+## ==========================
+export BIG_BENCH_HDFS_MOUNT_POINT="/home/hduser/mydata/hdfs/namenode"
+export BIG_BENCH_HDFS_NAMENODE="master:9000"
+
+export BIG_BENCH_USER="$USER"
+export BIG_BENCH_HDFS_ABSOLUTE_PATH="/user/$BIG_BENCH_USER"		 ##working dir of benchmark. 
+export BIG_BENCH_HDFS_REAL_BASE_DIR="$BIG_BENCH_HDFS_MOUNT_POINT$BIG_BENCH_HDFS_ABSOLUTE_PATH"
+export BIG_BENCH_HDFS_RELATIVE_DATA_DIR="benchmarks/bigbench/data"
+export BIG_BENCH_HDFS_RELATIVE_QUERY_RESULT_DIR="benchmarks/bigbench/queryResults"
+export BIG_BENCH_HDFS_RELATIVE_TEMP_DIR="benchmarks/bigbench/temp"
+export BIG_BENCH_HDFS_ABSOLUTE_DATA_DIR="$BIG_BENCH_HDFS_ABSOLUTE_PATH/$BIG_BENCH_HDFS_RELATIVE_DATA_DIR"
+export BIG_BENCH_HDFS_ABSOLUTE_QUERY_RESULT_DIR="$BIG_BENCH_HDFS_ABSOLUTE_PATH/$BIG_BENCH_HDFS_RELATIVE_QUERY_RESULT_DIR"
+export BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR="$BIG_BENCH_HDFS_ABSOLUTE_PATH/$BIG_BENCH_HDFS_RELATIVE_TEMP_DIR"
+
+## ==========================
+## HIVE (recommended version v0.12)
+## ==========================
+export BIG_BENCH_HIVE_DATABASE="bigbenchORC"
+export BIG_BENCH_hive_default_fileformat_result_table="TEXTFILE"
+
+## IMPORTANT
+## All following 'BIG_BENCH_hive' options are disabled in the queries because:
+## hive optimizations are still unstable. e.g hive.optimize.ppd failes for COUNT(*) in conjunction with ORC file format in Hive v.0.12.0 for q14 and q21
+## exec.parallel also is still considered unstable 
+## some of these options MAY work on your cluster and you can turn them on in your hive-site.xml.
+## If you do not want to or cannot changes these settings cluster globally, here is what you can do:
+##   un-comment all '##export BIG_BENCH..' entrys in this file. Then find-replace the string '--set' with 'set' in all hive query files with this command:
+##   find "${BIG_BENCH_QUERIES_DIR}"/ -name "*.sql" -print | xargs sed -i 's/--set/set/g'
+
+export BIG_BENCH_hive_exec_parallel="true"			## still considered unstable, may work on your cluster
+export BIG_BENCH_hive_exec_parallel_thread_number="8"
+
+## Intermediate and Ouput table options
+##export BIG_BENCH_hive_default_fileformat="ORC"
+##export BIG_BENCH_hive_exec_compress_intermediate="true"		## if your cluser has a good network you may set this to false
+##export BIG_BENCH_mapred_map_output_compression_codec="org.apache.hadoop.io.compress.SnappyCodec"
+##export BIG_BENCH_hive_exec_compress_output="true"		## most queries override this to false to keep the result human readable
+##export BIG_BENCH_mapred_output_compression_codec="org.apache.hadoop.io.compress.SnappyCodec"
+
+## Optimizations
+export BIG_BENCH_hive_optimize_mapjoin_mapreduce="true"
+##export BIG_BENCH_hive_optimize_bucketmapjoin="true"
+##export BIG_BENCH_hive_optimize_bucketmapjoin_sortedmerge="true"
+export BIG_BENCH_hive_auto_convert_join="true"			##may produces map-joins, which fail if not enough memory is available for the job
+##export BIG_BENCH_hive_auto_convert_sortmerge_join="true"
+##export BIG_BENCH_hive_auto_convert_sortmerge_join_noconditionaltask="true"
+##export BIG_BENCH_hive_optimize_index_filter="true"
+##export BIG_BENCH_hive_optimize_ppd="false"			##predicate push down for ORC tables fails on 0.12.0 
+
+
+## ================================================================
+##  /END/  ADAPT BELOW VARIABLES TO YOUR CLUSTER
+## ================================================================
+
+
+
+
+
+
+
+## ===================================================
+## important subdirectories
+## ===================================================
+## these locations must be reachable from all Nodes. 
+##option a) place the folder in you home and replicate it on every node 
+##option b) place folder into a shared location like a network file system 
+##option c) simply mount the hdfs as fuse-file-system (on every node) and place your BIG_BENCH_HOME folder it there
+
+export BIG_BENCH_BASH_SCRIPT_DIR="$BIG_BENCH_HOME/scripts"
+export BIG_BENCH_DATA_GENERATOR_DIR="$BIG_BENCH_HOME/data-generator"
+export BIG_BENCH_HIVE_SCRIPT_DIR="$BIG_BENCH_HOME/hive"
+export BIG_BENCH_QUERIES_DIR="$BIG_BENCH_HOME/queries"
+export BIG_BENCH_LOGS_DIR="$BIG_BENCH_HOME/logs"
+export BIG_BENCH_LOADING_STAGE_LOG="$BIG_BENCH_LOGS_DIR/hiveLoading.log"
+
+
+## ===================================================
+## Data generation options
+## ===================================================
+## cluster node addresses
+export BIG_BENCH_NODES="$BIG_BENCH_BASH_SCRIPT_DIR/nodes.txt"			#file containing all your computation nodes dns names or ip addresses (one ip per line)
+
+## Data generator options 
+export BIG_BENCH_DATAGEN_DFS_REPLICATION="1" 							#(recommended:1) replication count for files written by the datagenerator 
+export BIG_BENCH_DATAGEN_TABLES=""										# if empty-> generate all tables. Else: specify tables to generate. e.g. BIGBENCH_TABLES="item customer store". Tables to choose from: customer customer_address customer_demographics date_dim household_demographics income_band inventory item item_marketprices product_reviews promotion reason ship_mode store store_returns store_sales time_dim warehouse web_clickstreams web_page  web_returns web_sales web_site
+
+
+## ===================================================
+## Data generation environment
+## ===================================================
+#do not touch lines below unless you are sure you need to tamper with that
+export BIG_BENCH_DATAGEN_CORE_SITE="$BIG_BENCH_HADOOP_CONF/core-site.xml"
+export BIG_BENCH_DATAGEN_HDFS_SITE="$BIG_BENCH_HADOOP_CONF/hdfs-site.xml"
+
+#every table gets its own folder containing 1-n splits of the generated file. A folder per table, because HIVE works best with this.
+export BIG_BENCH_DATAGEN_PDGF_OUT="\'${BIG_BENCH_HDFS_ABSOLUTE_DATA_DIR}/\'+table.getName\(\)+\'/\' "	
+export BIG_BENCH_DATAGEN_JVM_ENV=" -cp \"${BIG_BENCH_HADOOP_LIBS}/*:$BIG_BENCH_DATA_GENERATOR_DIR/pdgf.jar\" "
+
+
+## ===================================================
+## Set permissions
+## ===================================================
+find $BIG_BENCH_HOME -name '*.sh' -exec chmod 755 {} +
+
+
+##===================================================
+## add bash script dir to path (if not already present)
+##===================================================
+
+if ! echo $PATH | grep "$BIG_BENCH_BASH_SCRIPT_DIR" > /dev/null 2>&1
+then
+  export PATH="$BIG_BENCH_BASH_SCRIPT_DIR:$PATH"
+fi

@@ -1,0 +1,49 @@
+Configured Capacity: 1456685367296 (1.32 TB)
+Present Capacity: 1372375113728 (1.25 TB)
+DFS Remaining: 1370973159424 (1.25 TB)
+DFS Used: 1401954304 (1.31 GB)
+DFS Used%: 0.10%
+Under replicated blocks: 13
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+
+-------------------------------------------------
+Datanodes available: 3 (3 total, 0 dead)
+
+Live datanodes:
+Name: 10.129.46.111:50010 (slave)
+Hostname: pc2-desktop
+Decommission Status : Normal
+Configured Capacity: 482281373696 (449.16 GB)
+DFS Used: 281391104 (268.36 MB)
+Non DFS Used: 28943298560 (26.96 GB)
+DFS Remaining: 453056684032 (421.94 GB)
+DFS Used%: 0.06%
+DFS Remaining%: 93.94%
+Last contact: Fri Jun 20 23:44:51 IST 2014
+
+
+Name: 10.129.46.130:50010 (slave2)
+Hostname: pc3-desktop
+Decommission Status : Normal
+Configured Capacity: 482281373696 (449.16 GB)
+DFS Used: 372817920 (355.55 MB)
+Non DFS Used: 28648931328 (26.68 GB)
+DFS Remaining: 453259624448 (422.13 GB)
+DFS Used%: 0.08%
+DFS Remaining%: 93.98%
+Last contact: Fri Jun 20 23:44:51 IST 2014
+
+
+Name: 10.129.46.115:50010 (slave3)
+Hostname: pc1-desktop
+Decommission Status : Normal
+Configured Capacity: 492122619904 (458.32 GB)
+DFS Used: 747745280 (713.11 MB)
+Non DFS Used: 26718023680 (24.88 GB)
+DFS Remaining: 464656850944 (432.75 GB)
+DFS Used%: 0.15%
+DFS Remaining%: 94.42%
+Last contact: Fri Jun 20 23:44:51 IST 2014
+
+

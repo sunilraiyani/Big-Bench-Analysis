@@ -1,0 +1,7 @@
+--
+/home/hduser/nfs/Big-Bench/logs/q08.log:======= q08  time =========
+/home/hduser/nfs/Big-Bench/logs/q08.log-
+/home/hduser/nfs/Big-Bench/logs/q08.log-real	15m55.086s
+/home/hduser/nfs/Big-Bench/logs/q08.log-user	1m37.426s
+/home/hduser/nfs/Big-Bench/logs/q08.log-sys	0m7.152s
+
